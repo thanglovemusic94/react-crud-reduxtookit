@@ -15,14 +15,14 @@ export const Products = () => {
         <>
             <div className="container">
                 <h3>Simple CRUD REACTJS - REDUX TOOKIT</h3>
-                <table className="table mt-3">
+                <table className="table table-bordered  border-secondary mt-3">
                     <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>
+                        <tr>
+                            <td scope="col">Title</td>
+                            <td scope="col">Description</td>
+                            <td scope="col">Status</td>
+                            <td scope="col">Action</td>
+                        </tr>
                     </thead>
                     <tbody>
 
