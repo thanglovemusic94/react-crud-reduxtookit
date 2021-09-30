@@ -35,8 +35,15 @@ export const Products = () => {
                                             <td> {v.description}</td>
                                             <td>{v.published}</td>
                                             <td>
-                                                <button type="button" className="btn btn-sm btn-primary me-2">edit</button>
-                                                <button type="button" className="btn btn-sm btn-danger">delete</button>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-sm btn-primary me-2">edit
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-sm btn-danger">
+                                                    delete
+                                                </button>
                                             </td>
                                         </tr>
                                     </>

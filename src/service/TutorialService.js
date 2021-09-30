@@ -6,7 +6,6 @@ export const TutorialService = {
 const baseURL = '/tutorials'
 
 function tutorials(){
-    console.log("hihi")
     return API.get(baseURL)
 }
 
