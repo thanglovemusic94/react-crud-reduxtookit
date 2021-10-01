@@ -1,14 +1,16 @@
-import {useEffect, useState} from "react";
-import TutorialService from "../../service/TutorialService";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {refreshTutorial} from "../../action/TutorialAction";
 
 export const Products = () => {
-    const [data, setData] = useState()
 
+    const data = useSelector(state =>  state.state);
+    const dispatch = useDispatch()
     useEffect(() => {
-        TutorialService.tutorials().then(res => {
-            setData(res.data)
-        }).catch(e => console.log(e))
+            dispatch(refreshTutorial())
     }, [])
+
+    console.log(data)
 
 
     return (
@@ -27,9 +29,9 @@ export const Products = () => {
                     <tbody>
 
                     {
-                        data ? data.map((v, i) => {
+                        data && data.map((v, i) => {
                                 return (
-                                    <>
+
                                         <tr key={i}>
                                             <td>{v.title}</td>
                                             <td> {v.description}</td>
@@ -46,19 +48,8 @@ export const Products = () => {
                                                 </button>
                                             </td>
                                         </tr>
-                                    </>
                                 )
                             })
-                            :
-                            <tr>
-                                <td>ô tô</td>
-                                <td> ô tô kia</td>
-                                <td>1</td>
-                                <td>
-                                    <button type="button" className="btn btn-sm btn-primary me-2">edit</button>
-                                    <button type="button" className="btn btn-sm btn-danger">delete</button>
-                                </td>
-                            </tr>
                     }
 
                     </tbody>

@@ -1,15 +1,20 @@
 import API from "../util/API";
 
 export const TutorialService = {
-    tutorials
+    getAll,
+    create
 }
 const baseURL = '/tutorials'
 
-function tutorials(){
+function getAll(){
     return API.get(baseURL)
 }
 
-
-export default  {
-    tutorials
+function create(data){
+    return API.post(baseURL, data)
 }
+
+
+// export default  {
+//     tutorials
+// }

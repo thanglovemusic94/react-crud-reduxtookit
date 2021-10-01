@@ -4,7 +4,7 @@ import './assets/scss/style.scss'
 import Products from "./feature/product";
 import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
 import React from "react";
-import router from "./router";
+import router from "./util/router";
 
 const loading = (
     <div className={'d-flex justify-content-center'}>

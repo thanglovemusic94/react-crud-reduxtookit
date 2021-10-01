@@ -1,6 +1,6 @@
 import React from "react";
 
-const product = React.lazy(() => import('./feature/product/index'))
+const product = React.lazy(() => import('../feature/product'))
 
 const router = [
     {path: '/', name: '/product', component: product, exact: true},
