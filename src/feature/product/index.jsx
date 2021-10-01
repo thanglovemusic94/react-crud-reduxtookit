@@ -10,8 +10,6 @@ export const Products = () => {
             dispatch(refreshTutorial())
     }, [])
 
-    console.log(data)
-
 
     return (
         <>
