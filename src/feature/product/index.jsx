@@ -32,7 +32,7 @@ export const Products = () => {
                    className="btn btn-sm btn-danger me-2">Remove All Tutorial
                 </a>
                 {
-                    data &&
+                    (data && data.length !==0) &&
                     <table className="table table-bordered  border-secondary mt-3">
                         <thead>
                         <tr>
@@ -47,11 +47,10 @@ export const Products = () => {
                         {
                             data.map((v, i) => {
                                 return (
-
                                     <tr key={i}>
                                         <td>{v.title}</td>
                                         <td> {v.description}</td>
-                                        <td>{v.published}</td>
+                                        <td>{(v.published === true ) ? <span>active</span> : <span>unactive</span>}</td>
                                         <td>
                                             <a href={"/product/edit/" + v.id}
                                                type="button"

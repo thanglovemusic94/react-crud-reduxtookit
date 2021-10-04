@@ -5,7 +5,8 @@ export const TutorialService = {
     create,
     remove,
     removeAll,
-    getById
+    getById,
+    edit
 }
 const baseURL = '/tutorials'
 
@@ -18,7 +19,7 @@ function getById(id) {
 }
 
 function edit(data, id) {
-    return API.patch(`${baseURL}/${id}`, data)
+    return API.put(`${baseURL}/${id}`, data)
 }
 
 function create(data){
@@ -26,11 +27,7 @@ function create(data){
 }
 
 function remove(id) {
-    return API.delete(baseURL, {
-        params: {
-            id: id
-        }
-    })
+    return API.delete(`${baseURL}/${id}`)
 }
 
 function removeAll() {

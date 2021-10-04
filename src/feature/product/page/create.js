@@ -15,15 +15,16 @@ export const CreateProducts = () => {
     })
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        let {name, value} = e.target;
+        if (value === 'true' || value === 'false')
+            value = JSON.parse(value)
         setData({...data, [name]: value})
     }
 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(data)
         dispatch(createTutorial(data))
-        history.replace('/')
+        history.push('/')
 
     }
     return (

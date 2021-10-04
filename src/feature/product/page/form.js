@@ -16,10 +16,22 @@ export const FormTutorial = ({onSubmit, handleChange, data}) => {
                     </div>
                     <div className="mb-3 ">
                         <label htmlFor="exampleInputPassword1" className="form-label">published</label>
-                        <select defaultValue={data.published} onChange={handleChange} className="form-select" name="published" aria-label="Default select example">
-                            <option value={true}>Active</option>
-                            <option value={false}>UnActive</option>
-                        </select>
+                        {/*<select defaultValue={data.published} value={data.published} onChange={handleChange} className="form-select" name="published" aria-label="Default select example">*/}
+                        {/*    <option value={1}>Active</option>*/}
+                        {/*    <option value={0}>UnActive</option>*/}
+                        {/*</select>*/}
+                        <div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input" type="radio" name="published" id="inlineRadio1"
+                                       value={true}  defaultChecked={data.published === true} onChange={handleChange}/>
+                                <label className="form-check-label" htmlFor="inlineRadio1">active</label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <input className="form-check-input" type="radio" name="published" id="inlineRadio2"
+                                       value={false} defaultChecked={data.published === false} onChange={handleChange}/>
+                                <label className="form-check-label" htmlFor="inlineRadio2">unactive</label>
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
